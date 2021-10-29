@@ -1,0 +1,369 @@
+<html>
+<head>
+<script type="text/javascript" src="Chart.bundle.min.js"></script>
+<script type="text/javascript" src="jquery-3.5.0.min.js"></script>
+<style>
+#canvas1 {
+	background-color: #708090;
+}
+</style>
+</head>
+<body bgcolor="grey">
+<!-- Create all canvases needed to graph data -->
+<canvas id="myCanvas" width="800" height="600"></canvas>
+<canvas id="myCanvas2" width="900" height="600"></canvas>
+<canvas id="myCanvas3" width="900" height="600"></canvas>
+<canvas id="myCanvas4" width="900" height="600"></canvas>
+<canvas id="myCanvas5" width="900" height="600"></canvas>
+<canvas id="myCanvas6" width="900" height="600"></canvas>
+<canvas id="myCanvas7" width="900" height="600"></canvas>
+<canvas id="myCanvas8" width="900" height="600"></canvas>
+<script>
+
+<!-- ALL PLOT FUNCTIONS FOR EACH SET OF DATA -->
+function plot1(results) {
+var ctx = document.getElementById("myCanvas").getContext('2d');
+
+Chart.defaults.global.defaultFontSize = 14;
+Chart.defaults.global.defaultFontColor = "#4dd218";
+var myCanvas = new Chart(ctx, {
+	type: 'line',
+	data: {
+		datasets: [{
+			label:"High Resolution Temperature",
+			lineTension: 0,
+			pointRadius: 0,
+			borderColor: '#ee890b',
+			borderWidth: 1,
+			data: results["hat1"],
+			fill: false
+		}],
+	},
+	options: {
+		scales: {
+			xAxes: [{
+				type: "time",
+				display: true,
+				scaleLabel: {
+					display: true,
+					labelString: "Date & Time"
+				}
+			}],
+			yAxes: [{
+				display: true,
+				scaleLabel: {
+					display: true,
+					labelString: "degrees Celcius"
+				}
+			}]
+		}
+	}
+	
+});
+}
+
+function plot2(results) {
+var ctx = document.getElementById("myCanvas2").getContext('2d');
+
+Chart.defaults.global.defaultFontSize = 14;
+Chart.defaults.global.defaultFontColor = "#4dd218";
+var myCanvas = new Chart(ctx, {
+    type: 'line',
+    data: {
+        datasets: [{
+            label:"Infared Light Intensity",
+            lineTension: 0,
+            pointRadius: 0,
+            borderColor: '#ee890b',
+            borderWidth: 1,
+            data: results["hat2"],
+            fill: false
+        }],
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                type: "time",
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Date & Time"
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Unsigned raw 16bit value"
+                }
+            }]
+        }
+    }
+    
+});
+}
+
+function plot3(results) {
+var ctx = document.getElementById("myCanvas3").getContext('2d');
+
+Chart.defaults.global.defaultFontSize = 14;
+Chart.defaults.global.defaultFontColor = "#4dd218";
+var myCanvas = new Chart(ctx, {
+    type: 'line',
+    data: {
+        datasets: [{
+            label:"Full Spectrum Light Intensity",
+            lineTension: 0,
+            pointRadius: 0,
+            borderColor: '#ee890b',
+            borderWidth: 1,
+            data: results["hat3"],
+            fill: false
+        }],
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                type: "time",
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Date & Time"
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Unsigned 16 bit raw value"
+                }
+            }]
+        }
+    }
+    
+});
+}
+
+function plot4(results) {
+var ctx = document.getElementById("myCanvas4").getContext('2d');
+
+Chart.defaults.global.defaultFontSize = 14;
+Chart.defaults.global.defaultFontColor = "#4dd218";
+var myCanvas = new Chart(ctx, {
+    type: 'line',
+    data: {
+        datasets: [{
+            label:"Visible Light Intensity",
+            lineTension: 0,
+            pointRadius: 0,
+            borderColor: '#ee890b',
+            borderWidth: 1,
+            data: results["hat4"],
+            fill: false
+        }],
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                type: "time",
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Date & Time"
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Unsigned 16 bit raw value"
+                }
+            }]
+        }
+    }
+    
+});
+}
+
+function plot5(results) {
+var ctx = document.getElementById("myCanvas5").getContext('2d');
+
+Chart.defaults.global.defaultFontSize = 14;
+Chart.defaults.global.defaultFontColor = "#4dd218";
+var myCanvas = new Chart(ctx, {
+    type: 'line',
+    data: {
+        datasets: [{
+            label:"Illuminance",
+            lineTension: 0,
+            pointRadius: 0,
+            borderColor: '#ee890b',
+            borderWidth: 1,
+            data: results["hat5"],
+            fill: false
+        }],
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                type: "time",
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Date & Time"
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Lux"
+                }
+            }]
+        }
+    }
+    
+});
+}
+
+function plot6(results) {
+var ctx = document.getElementById("myCanvas6").getContext('2d');
+
+Chart.defaults.global.defaultFontSize = 14;
+Chart.defaults.global.defaultFontColor = "#4dd218";
+var myCanvas = new Chart(ctx, {
+    type: 'line',
+    data: {
+        datasets: [{
+            label:"Temperature",
+            lineTension: 0,
+            pointRadius: 0,
+            borderColor: '#ee890b',
+            borderWidth: 1,
+            data: results["hat6"],
+            fill: false
+        }],
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                type: "time",
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Date & Time"
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "degrees centiCelcius"
+                }
+            }]
+        }
+    }
+    
+});
+}
+
+function plot7(results) {
+var ctx = document.getElementById("myCanvas7").getContext('2d');
+
+Chart.defaults.global.defaultFontSize = 14;
+Chart.defaults.global.defaultFontColor = "#4dd218";
+var myCanvas = new Chart(ctx, {
+    type: 'line',
+    data: {
+        datasets: [{
+            label:"Pressure",
+            lineTension: 0,
+            pointRadius: 0,
+            borderColor: '#ee890b',
+            borderWidth: 1,
+            data: results["hat7"],
+            fill: false
+        }],
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                type: "time",
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Date & Time"
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "millibars *10^4"
+                }
+            }]
+        }
+    }
+    
+});
+}
+
+function plot8(results) {
+var ctx = document.getElementById("myCanvas8").getContext('2d');
+
+Chart.defaults.global.defaultFontSize = 14;
+Chart.defaults.global.defaultFontColor = "#4dd218";
+var myCanvas = new Chart(ctx, {
+    type: 'line',
+    data: {
+        datasets: [{
+            label:"Relative Humidity",
+            lineTension: 0,
+            pointRadius: 0,
+            borderColor: '#ee890b',
+            borderWidth: 1,
+            data: results["hat8"],
+            fill: false
+        }],
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                type: "time",
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Date & Time"
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "millipercent"
+                }
+            }]
+        }
+    }
+    
+});
+}
+
+<!-- Function to call all the plot functions using the json encoded data from index.php-->
+var jsondata= $.ajax({url:'index.php', dataType: 'json',}).done(function (results) { plot1(results); plot2(results); plot3(results); plot4(results); plot5(results); plot6(results); plot7(results); plot8(results); } );
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
